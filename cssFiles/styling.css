@@ -1,13 +1,22 @@
+body {
+    margin: 0; /* Remove default margin */
+    font-family: 'Courier New', Courier, monospace; /* Set the global font */
+    background-color: #495aba; /* Set the page background color */
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    display: flex; /* Use flexbox for centering and full width */
+    justify-content: center; /* Center the navigation items horizontally */
+    align-items: center; /* Center the navigation items vertically */
+    width: 100%; /* Make the ul take the full width of the nav */
     background-color: #333;
 }
 
 nav ul li {
-    float: left;
+    margin: 0 10px; /* Add horizontal space between the items */
 }
 
 nav ul li a {
@@ -19,24 +28,24 @@ nav ul li a {
 }
 
 nav ul li a:hover, .dropdown:hover .dropdown-content {
-    background-color: #111;
+    background-color: #000000;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #4a4a4a;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content li {
-    float: none;
+    float: none; /* Ensure dropdown items do not float */
 }
 
 .dropdown-content li a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -44,7 +53,7 @@ nav ul li a:hover, .dropdown:hover .dropdown-content {
 }
 
 .dropdown-content li a:hover {
-    background-color: #ddd;
+    background-color: #2d2d2d;
 }
 
 .dropdown:hover .dropdown-content {
@@ -55,5 +64,4 @@ main {
     padding: 16px;
     font-size: 16px;
     line-height: 1.6;
-    font-family: Arial, sans-serif;
 }
