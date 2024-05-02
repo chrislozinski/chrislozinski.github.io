@@ -1,22 +1,22 @@
 body {
-    margin: 0; /* Remove default margin */
-    font-family: 'Courier New', Courier, monospace; /* Set the global font */
-    background-color: #495aba; /* Set the page background color */
+    margin: 0; 
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #495aba; 
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Use flexbox for centering and full width */
-    justify-content: center; /* Center the navigation items horizontally */
-    align-items: center; /* Center the navigation items vertically */
-    width: 100%; /* Make the ul take the full width of the nav */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    width: 100%; 
     background-color: #333;
 }
 
 nav ul li {
-    margin: 0 10px; /* Add horizontal space between the items */
+    margin: 0 10px; 
 }
 
 nav ul li a {
@@ -35,13 +35,13 @@ nav ul li a:hover, .dropdown:hover .dropdown-content {
     display: none;
     position: absolute;
     background-color: #4a4a4a;
-    min-width: 10px;
-    box-shadow: 0px 8px 16px 0px #4a4a4a(0,0,0,0.2);
+    min-width: 160px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content li {
-    float: none; /* Ensure dropdown items do not float */
+    float: none; 
 }
 
 .dropdown-content li a {
@@ -66,41 +66,67 @@ main {
     line-height: 1.6;
 }
 
+/* sidebar styles */
+ul.sidebar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%; 
+    background-color: #f1f1f1;
+    height: 100%; 
+    position: fixed; 
+    overflow-y: auto; 
+    top: 0; 
+    left: 0; 
+}
+
 @media (max-width: 767px) {
     nav ul {
-        flex-direction: column; /* Stack nav items vertically */
+        flex-direction: column;
         align-items: center;
     }
 
     nav ul li a {
-        padding: 10px; /* Smaller padding */
+        padding: 10px; 
         text-align: center;
     }
 
     .dropdown-content {
-        position: static; /* Dropdowns appear inline rather than absolute */
+        position: static;
+    }
+
+    ul.sidebar {
+        width: 100%; 
     }
 }
 
-/* Medium devices (tablets, 768px and up) */
+/*tablets, 768px and up */
 @media (min-width: 768px) {
     nav ul li {
-        margin-right: 10px; /* Space between items */
+        margin-right: 10px; 
+    }
+
+    ul.sidebar {
+        width: 40%; 
     }
 }
 
-/* Large devices (desktops, 992px and up) */
+/*desktops, 992px and up */
 @media (min-width: 992px) {
     main {
-        padding: 20px; /* More padding on larger screens */
-        font-size: 18px; /* Larger text on larger screens */
+        padding: 20px;
+        font-size: 18px; 
+    }
+
+    ul.sidebar {
+        width: 25%;
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
+/* large desktops, 1200px and up */
 @media (min-width: 1200px) {
     main {
-        max-width: 1140px; /* Max width for main content area */
-        margin: auto; /* Center it on very large screens */
+        max-width: 1140px; 
+        margin: auto; 
     }
 }
