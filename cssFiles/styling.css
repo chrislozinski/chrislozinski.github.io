@@ -1,6 +1,6 @@
 body {
     margin: 0; 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace; 
     background-color: #495aba; 
 }
 
@@ -8,11 +8,14 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; 
-    justify-content: center;
+   /* display: flex; */
+    justify-content: center; 
     align-items: center; 
-    width: 100%; 
+    width: 25%; 
+    height: 100%;
     background-color: #333;
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
 }
 
 nav ul li {
@@ -35,8 +38,8 @@ nav ul li a:hover, .dropdown:hover .dropdown-content {
     display: none;
     position: absolute;
     background-color: #4a4a4a;
-    min-width: 160px; 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 10px;
+    box-shadow: 0px 8px 16px 0px #4a4a4a(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -66,23 +69,9 @@ main {
     line-height: 1.6;
 }
 
-/* sidebar styles */
-ul.sidebar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%; 
-    background-color: #f1f1f1;
-    height: 100%; 
-    position: fixed; 
-    overflow-y: auto; 
-    top: 0; 
-    left: 0; 
-}
-
 @media (max-width: 767px) {
     nav ul {
-        flex-direction: column;
+        flex-direction: column; 
         align-items: center;
     }
 
@@ -92,38 +81,26 @@ ul.sidebar {
     }
 
     .dropdown-content {
-        position: static;
-    }
-
-    ul.sidebar {
-        width: 100%; 
+        position: static; 
     }
 }
 
-/*tablets, 768px and up */
+/* medium devices 768px+ */
 @media (min-width: 768px) {
     nav ul li {
         margin-right: 10px; 
     }
-
-    ul.sidebar {
-        width: 40%; 
-    }
 }
 
-/*desktops, 992px and up */
+/* large devices 992px and up */
 @media (min-width: 992px) {
     main {
-        padding: 20px;
+        padding: 20px; 
         font-size: 18px; 
-    }
-
-    ul.sidebar {
-        width: 25%;
     }
 }
 
-/* large desktops, 1200px and up */
+/*  large devices  */
 @media (min-width: 1200px) {
     main {
         max-width: 1140px; 
