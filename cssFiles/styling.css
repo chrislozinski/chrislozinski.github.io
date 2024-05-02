@@ -35,7 +35,7 @@ nav ul li a:hover, .dropdown:hover .dropdown-content {
     display: none;
     position: absolute;
     background-color: #4a4a4a;
-    min-width: 70px;
+    min-width: 10px;
     box-shadow: 0px 8px 16px 0px #4a4a4a(0,0,0,0.2);
     z-index: 1;
 }
@@ -64,4 +64,43 @@ main {
     padding: 16px;
     font-size: 16px;
     line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 10px; /* Smaller padding */
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static; /* Dropdowns appear inline rather than absolute */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    nav ul li {
+        margin-right: 10px; /* Space between items */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    main {
+        padding: 20px; /* More padding on larger screens */
+        font-size: 18px; /* Larger text on larger screens */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1140px; /* Max width for main content area */
+        margin: auto; /* Center it on very large screens */
+    }
 }
