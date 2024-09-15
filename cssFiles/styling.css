@@ -4,6 +4,58 @@ body {
     background-color: #495aba; 
 }
 
+/* Sidebar styling */
+.sidebar {
+    height: 100%; /* Full height */
+    width: 0; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    top: 0;
+    left: 0;
+    background-color: #333; /* Dark background */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Animation for opening/closing */
+    padding-top: 60px; /* Space at the top */
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Open button for sidebar */
+.openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 10px;
+}
+
+/* Main content area */
+#main {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
