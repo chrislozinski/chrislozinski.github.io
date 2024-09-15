@@ -55,7 +55,7 @@ body {
     transition: margin-left 0.5s;
     padding: 16px;
 }
-
+/*
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -138,26 +138,26 @@ main {
         position: static; 
     }
 }
-
+*/
 /* medium devices 768px+ */
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     nav ul li {
         margin-right: 10px; 
     }
 }
-
+*/
 /* large devices 992px and up */
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
     main {
         padding: 20px; 
         font-size: 18px; 
     }
 }
-
+*/
 /*  large devices  */
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
     main {
         max-width: 1140px; 
         margin: auto; 
     }
-}
+} */
