@@ -9,14 +9,14 @@
 </head>
 <body>
 
-    <!-- Button to open the sidebar -->
+    <!-- button for side bar code -->
     <div id="main">
-        <button class="openbtn" onclick="openNav()">☰</button> <!-- Hamburger icon -->
+        <button class="openbtn" onclick="openNav()">▶</button> <!-- button / icon -->
     </div>
 
-    <!-- Sidebar -->
+    <!-- actual page navigation references  -->
     <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">◀</a>
         <a href="home.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -26,13 +26,13 @@
     </div>
 
     <script>
-        /* Function to open the sidebar */
+        /* this function is to open the navigation menu */
         function openNav() {
-            document.getElementById("mySidebar").style.width = "250px"; // Sidebar width when opened
-            document.getElementById("main").style.marginLeft = "250px"; // Shift the content
+            document.getElementById("mySidebar").style.width = "250px"; //  width when opened
+            document.getElementById("main").style.marginLeft = "250px"; // padding/ margin shifting the content
         }
 
-        /* Function to close the sidebar */
+        /* this function is to close the navigation menu  */
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";

@@ -4,7 +4,6 @@ body {
     background-color: #495aba; 
 }
 
-/* Sidebar styling */
 .sidebar {
     height: 100%; /* Full height */
     width: 0; /* Hidden by default */
@@ -32,9 +31,14 @@ body {
 
 .sidebar .closebtn {
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
 }
 
 /* Open button for sidebar */
@@ -44,9 +48,10 @@ body {
     background-color: #333;
     color: white;
     border: none;
-    position: absolute;
-    top: 15px;
-    left: 15px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     padding: 10px;
 }
 
