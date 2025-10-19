@@ -1,6 +1,5 @@
 /*i love fonts, so im going to import some google fonts! */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* then ill have my font classes here*/
 .oxygen-light {
   font-family: "Oxygen", sans-serif;
@@ -39,15 +38,9 @@
 
 body {
     margin: 0; 
-    font-family: "Inconsolata", monospace;  /* paragraph */
     background-color: #495aba; 
     color: #ffffff;
     line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Oxygen", sans-serif; /* title */
-    font-weight: 700;
 }
 
 nav, .sidebar {
@@ -69,7 +62,7 @@ nav, .sidebar {
 }
 
 .sidebar a {
-    font-family: "Roboto", sans-serif;
+    font-family: inherit; 
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 20px;
