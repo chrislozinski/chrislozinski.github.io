@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 $(document).ready(function(){
-    $("#header").load("../header.html");  // Go UP from js/ folder
-    $("#navbar").load("../navMenu.html"); // Go UP from js/ folder
+    $("#header").load("header.html");
+    $("#navbar").load("navMenu.html");
+
 });
