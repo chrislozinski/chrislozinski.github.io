@@ -19,6 +19,7 @@ function loadNavBar() {
 }
 
 // to open the nav bar  
+/*
 function openNavBar() {
     document.getElementById("mySidebar").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -29,7 +30,7 @@ function closeNavBar() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
-
+*/
 
 document.addEventListener('DOMContentLoaded', function() {
     loadNavBar();
