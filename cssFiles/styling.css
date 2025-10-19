@@ -1,7 +1,57 @@
+/*i love fonts, so im going to import some google fonts! */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* then ill have my font classes here*/
+.oxygen-light {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oxygen-regular {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oxygen-bold {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inconsolata-regular {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*aaaand back to our regular styling for css elements *non font stuff** */
+
 body {
     margin: 0; 
-    font-family: 'Courier New', Courier, monospace; 
+    font-family: "Inconsolata", monospace;  /* paragraph */
     background-color: #495aba; 
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oxygen", sans-serif; /* title */
+    font-weight: 700;
+}
+
+nav, .sidebar {
+    font-family: "Roboto", sans-serif; /* nav font??? */
 }
 
 .sidebar {
@@ -10,10 +60,12 @@ body {
     position: fixed; /* Stay in place */
     top: 0;
     left: 0;
-    background-color: #333; /* Dark background */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* Animation for opening/closing */
-    padding-top: 60px; /* Space at the top */
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar a {

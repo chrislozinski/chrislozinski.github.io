@@ -1,55 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<div id="header"></div>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="../cssFiles/styling.css">
-
 </head>
 <body>
+    <!-- i load the nav bar here instead of manually -->
+    <div id="navbar"></div>
 
-    <!-- button for side bar code -->
-    <div id="main">
-        <button class="openbtn" onclick="openNav()">▶</button> <!-- button / icon -->
-    </div>
+    <h1 class="oxygen-bold">Welcome Home!</h1>
+   
 
-    <!-- actual page navigation references  -->
-    <div id="mySidebar" class="sidebar">
-
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">◀</a>
-
-        <li class="search-box">
-            <i class='bx bx-search icon'></i>
-            <input type="text" placeholder="Search Ganes...">
-        </li>
-
-        <a href="home.html">
-            <i class='bx bx-bar-chart-alt-2 icon'></i>
-            <span class="text nav-text">Home</span>
-        </a>
-
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="experience.html">Experience</a>
-        <a href="music.html">Music</a>
-        <a href="games.html">Games</a>
-    </div>
-
-    <script>
-        /* this function is to open the navigation menu */
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px"; //  width when opened
-            document.getElementById("main").style.marginLeft = "250px"; // padding/ margin shifting the content
-        }
-
-        /* this function is to close the navigation menu  */
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
-
+    <!-- javascript for navbar code -->
+    <script src="../js/navBar.js"></script>
 </body>
 </html>
 
