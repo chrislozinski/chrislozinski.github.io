@@ -2,7 +2,7 @@
 
 // to load the navigaiton bar on each of the pages, this function will be called 
 // this was originally in my html file but gotta implement good oop practices lol
-/*
+
 function loadNavBar() {
     fetch('header.html')
         .then(response => response.text())
@@ -21,10 +21,4 @@ function loadNavBar() {
 
 document.addEventListener('DOMContentLoaded', function() {
     loadNavBar();
-});
-*/
-$(document).ready(function(){
-    $("#header").load("header.html");
-    $("#navbar").load("navMenu.html");
-
 });
