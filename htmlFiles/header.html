@@ -5,4 +5,17 @@
     <link rel="stylesheet" href="../cssFiles/styling.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        /* Hide everything until page loads */
+        body {
+            opacity: 0;
+        }
+        
+        /* Show everything after load */
+        body.loaded {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+    </style>
+
 </head>

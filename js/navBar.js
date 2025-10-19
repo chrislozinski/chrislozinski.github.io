@@ -14,6 +14,7 @@ function loadNavBar() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
+            document.body.classList.add('loaded');
         }
     );
 }
