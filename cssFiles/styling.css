@@ -1,6 +1,29 @@
 /*i love fonts, so im going to import some google fonts! */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 /* then ill have my font classes here*/
+
+/* h: spectral  */
+.spectral-extralight { font-family: "Spectral", serif; font-weight: 200; font-style: normal; }
+.spectral-light { font-family: "Spectral", serif; font-weight: 300; font-style: normal; }
+.spectral-regular { font-family: "Spectral", serif; font-weight: 400; font-style: normal; }
+.spectral-medium { font-family: "Spectral", serif; font-weight: 500; font-style: normal; }
+.spectral-semibold { font-family: "Spectral", serif; font-weight: 600; font-style: normal; }
+.spectral-bold { font-family: "Spectral", serif; font-weight: 700; font-style: normal; }
+.spectral-extrabold { font-family: "Spectral", serif; font-weight: 800; font-style: normal; }
+
+
+/* p: karla */
+.karla-extralight { font-family: "Karla", sans-serif; font-weight: 200; font-style: normal; }
+.karla-light { font-family: "Karla", sans-serif; font-weight: 300; font-style: normal; }
+.karla-regular { font-family: "Karla", sans-serif; font-weight: 400; font-style: normal; }
+.karla-medium { font-family: "Karla", sans-serif; font-weight: 500; font-style: normal; }
+.karla-semibold { font-family: "Karla", sans-serif; font-weight: 600; font-style: normal; }
+.karla-bold { font-family: "Karla", sans-serif; font-weight: 700; font-style: normal; }
+.karla-extrabold { font-family: "Karla", sans-serif; font-weight: 800; font-style: normal; }
+
+
+/* oxygen   */
 .oxygen-light {
   font-family: "Oxygen", sans-serif;
   font-weight: 300;
@@ -38,15 +61,20 @@
 
 body {
     margin: 0; 
-    font-family: "Inconsolata", monospace;
+    font-family: "Karla", sans-serif;
    /* font-family: 'Courier New', Courier, monospace; */
-    background-color: #495aba; 
+    background-color: #273AA8; /* changed the background colour for better contrast */
     color: #ffffff;
 }
-
+/*
 h1, h2, h3, h4, h5, h6 {
     font-family: "Oxygen", sans-serif; 
     font-weight: 700;
+}*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Spectral", serif; 
+    font-weight: 600; 
 }
 
 nav, .sidebar {
@@ -54,16 +82,19 @@ nav, .sidebar {
 }
 
 .sidebar {
-    font-family: "Roboto", sans-serif;
+    font-family: "Spectral", serif;
+    font-weight: 500;
     height: 100%; 
     width: 165px; /* changed this so its a little smaller */
     position: fixed; 
     top: 0;
     left: 0;
-    background: linear-gradient(135deg, #333 0%, #555 100%);
+    background-color: #2E2F33;
+    /* background: linear-gradient(135deg, #333 0%, #555 100%); */
+    /* 2E2F33 */
     overflow-x: hidden;
     padding-top: 60px;
-    border-radius: 0 20px 20px 0;
+   /* border-radius: 0 20px 20px 0; */
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -81,6 +112,9 @@ nav, .sidebar {
     background-color: #575757;
 }
 
+.code-font {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 /* Main content area */
 #main {
