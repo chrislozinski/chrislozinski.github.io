@@ -8,8 +8,8 @@ async function loadNavBar() {
     
     // load both components in parallel
     const [headerHTML, navHTML] = await Promise.all([
-        fetch('../templates/header.html').then(r => r.text()),
-        fetch('../templates/navMenu.html').then(r => r.text())
+        fetch('header.html').then(r => r.text()),
+        fetch('navMenu.html').then(r => r.text())
     ]);
     
     // insert content
