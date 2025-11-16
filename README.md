@@ -30,8 +30,8 @@
 ## graphics and assets
 - all graphics and assets are made by hand, by me, (no ai, hell no) in photoshop and illustrator
 - all of the assets for this website and on this repo fall under a CC BY-NC-SA License which: 
-    - *enables reusers to distribute, remix, adapt, and build upon the material in any medium or format for **noncommercial purposes only**, and only so long as **attribution is given to the creator.** *(meaning explicit credit)*
-    - *If you remix, adapt, or build upon the material, you must license the modified material under identical terms. CC BY-NC-SA includes the following elements:*
+    - *enables reusers to distribute, remix, adapt, and build upon the material in any medium or format for* **noncommercial purposes only**, *and only so long as* **attribution is given to the creator.** *(meaning explicit credit)*
+    - *If you remix, adapt, or build upon the material, you must license the modified material under identical terms.* **CC BY-NC-SA** *includes the following elements:*
         - *BY: credit must be given to the creator.
         - *NC: Only noncommercial uses of the work are permitted.
         - *SA: Adaptations must be shared under the same terms."*
