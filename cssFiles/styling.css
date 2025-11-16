@@ -22,6 +22,7 @@
 .karla-bold { font-family: "Karla", sans-serif; font-weight: 700; font-style: normal; }
 .karla-extrabold { font-family: "Karla", sans-serif; font-weight: 800; font-style: normal; }
 
+/* p: inconsolata */
 .inconsolata-regular {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
@@ -33,8 +34,8 @@
 
 body {
     margin: 0; 
-    font-family: "Karla", sans-serif;
-    background-color: #273AA8; /* changed the background colour for better contrast */
+    font-family: "Inconsolata", monospace;
+    background-color: #364ebf; /* changed the background colour for better contrast */
     color: #ffffff;
 }
 
@@ -51,7 +52,7 @@ nav, .sidebar {
     font-family: "Karla", sans-serif;
     font-weight: 300;
     height: 100%; 
-    width: 150px; /* changed this so its a little smaller */
+    width: 165px; /* changed this so its a little smaller */
     position: fixed; 
     top: 0;
     left: 0;

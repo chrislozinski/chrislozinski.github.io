@@ -1,29 +1,10 @@
-// moving all my navigation bar code into one folder 
-
-// to load the navigaiton bar on each of the pages, this function will be called 
+// this function will be called to load the navigaiton bar on each of the pages, into the empty div in the index.html file
 // this was originally in my html file but gotta implement good oop practices lol
 
 async function loadNavBar() {
-    document.body.style.opacity = '0'; // ill try to hide body (dexter lol) at first to prevent flashing
-    
-    // load both components in parallel
-    const [headerHTML, navHTML] = await Promise.all([
-        fetch('header.html').then(r => r.text()),
-        fetch('navMenu.html').then(r => r.text())
-    ]);
-    
-    // insert content
-    document.getElementById('header').innerHTML = headerHTML;
-    document.getElementById('navbar').innerHTML = navHTML;
-    
-    // try to show body with fade in
-    document.body.style.opacity = '1';
-    document.body.style.transition = 'opacity 0.3s ease';
+    const navHTML = await fetch('htmlFiles/navMenu.html').then(r => r.text()); // we first fetch the navmenu html content in its file, open it in read mode
+    document.getElementById('navbar').innerHTML = navHTML; // then we insert the content in the navbar.html file into the empty nav bar div in index.html
+
 }
 
-// load when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadNavBar);
-} else {
-    loadNavBar();
-}
+document.addEventListener('DOMContentLoaded', loadNavBar); // finally we just wait for stucture of the page to be ready and then call the load nav bar function to load the nav bar on the new page 
