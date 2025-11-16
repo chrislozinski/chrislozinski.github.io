@@ -44,6 +44,36 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600; 
 }
 
+/* nav bar styling */
+/* styling for my name on sidebar */
+.nav-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0px;
+    background-color: #2E2F33;
+    text-align: left;
+    padding-top: 50px;
+}
+
+.nav-title {
+    transform: scale(1.05); 
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-header .nav-title:hover {
+    text-shadow: 0 0 0.4px rgb(206, 188, 255), 0 0 0.7px rgb(255, 255, 255); 
+    transform: scale(1.05); 
+    background-color: transparent; /* so the container doesnt show like the rest of the nav bar */
+}
+
 nav, .sidebar {
     font-family: "Karla", sans-serif;
 }
@@ -52,13 +82,13 @@ nav, .sidebar {
     font-family: "Karla", sans-serif;
     font-weight: 300;
     height: 100%; 
-    width: 165px; /* changed this so its a little smaller */
+    width: 175px; /* changed this so its a little smaller */
     position: fixed; 
     top: 0;
     left: 0;
     background-color: #2E2F33;
     overflow-x: hidden;
-    padding-top: 80px;
+    padding-top: 155px;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,7 +96,7 @@ nav, .sidebar {
     font-family: inherit;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     display: block;
 }
@@ -78,10 +108,11 @@ nav, .sidebar {
 /* main content area */
 #main {
     /*transition: margin-left 0.5s;*/
-    margin-left: 165px;
+    margin-left: 180px;
     padding: 20px;
     max-width: calc(100% - 175px); /* in order to stop content from going under sidebar */
     box-sizing: border-box;
+    padding-top: 30px;
 }
 
 /*@media (min-width: 992px) {
