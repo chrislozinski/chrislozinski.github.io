@@ -35,8 +35,8 @@
 body {
     margin: 0; 
     font-family: "Inconsolata", monospace;
-    /* background-color: #2660A4; *//* changed the background colour for better contrast */
-    background-color: #3C6844;
+    /* background-color: #174d38; *//* changed the background colour for better contrast */
+    background-color: #224E28;
     color: #ffffff;
 }
 
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     padding: 30px 0px;
     /*background-color: #1B1B1E;*/
-    background-color: #06546B;
+    background-color: #163564;
     text-align: left;
     padding-top: 50px;
 }
@@ -89,7 +89,7 @@ nav, .sidebar {
     top: 0;
     left: 0;
    /*  background-color: #1B1B1E; */
-    background-color: #054B61; 
+    background-color: #163564; 
     overflow-x: hidden;
     padding-top: 155px;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
@@ -106,7 +106,7 @@ nav, .sidebar {
 
 .sidebar a:hover {
    /* background-color: #575757;*/
-   background-color: #08799B;
+   background-color: #1A3E75;
 }
 
 /* main content area */
