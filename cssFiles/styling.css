@@ -36,7 +36,7 @@ body {
     margin: 0; 
     font-family: "Inconsolata", monospace;
     /* background-color: #174d38; *//* changed the background colour for better contrast */
-    background-color: #224E28;
+    background-color: #1B4B0F;
     color: #ffffff;
 }
 
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     padding: 30px 0px;
     /*background-color: #1B1B1E;*/
-    background-color: #163564;
+    background-color: #012966;
     text-align: left;
     padding-top: 50px;
 }
@@ -89,7 +89,7 @@ nav, .sidebar {
     top: 0;
     left: 0;
    /*  background-color: #1B1B1E; */
-    background-color: #163564; 
+    background-color: #012966; 
     overflow-x: hidden;
     padding-top: 155px;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
