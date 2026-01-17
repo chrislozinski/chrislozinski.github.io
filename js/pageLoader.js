@@ -7,6 +7,10 @@ async function loadPage(page) {
     const html = await fetch(`htmlFiles/${page}.html`).then(r => r.text()); // grabs the page 
     document.getElementById('main').innerHTML = html; // then inserts it iinto the div main in index.html empty main
     document.title = page.charAt(0).toUpperCase() + page.slice(1); // change the browser tab title to the page title to match
+
+    if (typeof initAccordions === 'function') { // check for whether i have a list on my page
+        initAccordions();
+    }
 }
 
 // this handles nav bar clicks

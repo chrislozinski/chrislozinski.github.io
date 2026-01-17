@@ -36,8 +36,8 @@ body {
     margin: 0; 
     font-family: "Inconsolata", monospace;
     /* background-color: #2660A4; *//* changed the background colour for better contrast */
-    background-color: #3C6844;
-    color: #ffffff;
+    background-color: #f0e7d5;
+    color: #144b8a;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,7 +54,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     padding: 30px 0px;
     /*background-color: #1B1B1E;*/
-    background-color: #06546B;
+   /* background-color: #06546B;*/
+    background-color: #124783;
     text-align: left;
     padding-top: 50px;
 }
@@ -63,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.05); 
     display: inline-block;
     text-decoration: none;
-    color: white;
+    color: #f0e7d5;
     font-size: 50px;
     font-weight: 600;
     margin: 0;
@@ -89,7 +90,7 @@ nav, .sidebar {
     top: 0;
     left: 0;
    /*  background-color: #1B1B1E; */
-    background-color: #054B61; 
+    background-color: #124783; 
     overflow-x: hidden;
     padding-top: 155px;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
@@ -100,13 +101,13 @@ nav, .sidebar {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    color: #EDEDF5;
     display: block;
 }
 
 .sidebar a:hover {
    /* background-color: #575757;*/
-   background-color: #08799B;
+   background-color: #16569e;
 }
 
 /* main content area */
@@ -117,6 +118,58 @@ nav, .sidebar {
     max-width: calc(100% - 175px); /* in order to stop content from going under sidebar */
     box-sizing: border-box;
     padding-top: 30px;
+}
+
+/* accordion list  styling */
+.accordion {
+    max-width: 600px;
+    margin-top: 20px;
+    border-top: 1px solid #124783; 
+}
+
+.accordion-item {
+    border-bottom: 1px solid #124783;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.accordion-header p {
+    margin: 0;
+}
+
+/* when expanded */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    font-family: "Karla", sans-serif; 
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+    padding-bottom: 20px;
+}
+
+.go-btn {
+    background-color: #124783; 
+    color: #f0e7d5;           
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-family: inherit; 
+    cursor: pointer;
+    margin-top: 15px;
+    transition: opacity 0.2s;
+}
+
+.go-btn:hover {
+    opacity: 0.9; 
 }
 
 /*@media (min-width: 992px) {
