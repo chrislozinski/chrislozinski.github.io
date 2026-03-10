@@ -249,8 +249,15 @@ nav, .sidebar {
     min-height: 16px;
 }
 
-.form-status.success { color: #2a6e2a; }
-.form-status.error   { color: #a02020; }
+.form-status.success { 
+    color: #2a6e2a; 
+    padding: 4px;
+}
+
+.form-status.error   { 
+    color: #a02020; 
+    padding: 4px;
+}
 
 .contact-form .go-btn {
     margin-top: -16px;    

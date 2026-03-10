@@ -34,11 +34,11 @@ function initContactForm() {
             // no-cors always returns an opaque response with status 0
             // if fetch didn't throw, the request was sent successfully
             status.className = 'form-status success';
-            status.textContent = "Sent! I'll be in touch soon :)";
+            status.textContent = "Sent! I'll be in touch soon.";
             form.reset();
         } catch {
             status.className = 'form-status error';
-            status.textContent = 'Something went wrong. Try emailing me directly at clozinsk@uoguelph.ca';
+            status.textContent = 'Something went wrong. Feel free to email me directly at clozinsk@uoguelph.ca';
         }
 
         btn.disabled = false;
