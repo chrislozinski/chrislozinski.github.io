@@ -11,6 +11,10 @@ async function loadPage(page) {
     if (typeof initAccordions === 'function') { // check for whether i have a list on my page
         initAccordions();
     }
+
+    if (typeof initContactForm === 'function') {
+        initContactForm();
+    }
 }
 
 // this handles nav bar clicks
