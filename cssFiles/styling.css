@@ -251,12 +251,14 @@ nav, .sidebar {
 
 .form-status.success { 
     color: #2a6e2a; 
-    padding: 4px;
+    gap: 5px;
+    font-size: 14px;
 }
 
 .form-status.error   { 
     color: #a02020; 
-    padding: 4px;
+    gap: 5px;
+    font-size: 14px;
 }
 
 .contact-form .go-btn {
