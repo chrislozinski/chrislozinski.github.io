@@ -1,4 +1,4 @@
-// handles contact form submission via FormEasy (Google Apps Script)
+// This script is for contact form submission via FormEasy using a google apps script 
 
 const FORMEASY_URL = 'https://script.google.com/macros/s/AKfycbxwqcMkNFZhsWsq2X3uzlIWjVJGNeNvbV3Lgq1fRyWf4aRFP9NgdtJQi0QBj58qppEtlw/exec';
 
@@ -24,30 +24,18 @@ function initContactForm() {
         status.textContent = '';
 
         try {
-            const res = await fetch(FORMEASY_URL, {
+            await fetch(FORMEASY_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(data),
-                redirect: 'follow'
+                mode: 'no-cors'
             });
 
-            // Try to parse JSON, but if the fetch itself succeeded, treat it as success
-            let success = false;
-            try {
-                const json = await res.json();
-                success = (json.result === 'success');
-            } catch {
-                // if we can't parse JSON but got a 200, it likely worked
-                success = res.ok || res.status === 0 || res.type === 'opaque';
-            }
-
-            if (success) {
-                status.className = 'form-status success';
-                status.textContent = "Sent! I'll be in touch soon :)";
-                form.reset();
-            } else {
-                throw new Error('Server returned an error');
-            }
+            // no-cors always returns an opaque response with status 0
+            // if fetch didn't throw, the request was sent successfully
+            status.className = 'form-status success';
+            status.textContent = "Sent! I'll be in touch soon :)";
+            form.reset();
         } catch {
             status.className = 'form-status error';
             status.textContent = 'Something went wrong. Try emailing me directly at clozinsk@uoguelph.ca';
