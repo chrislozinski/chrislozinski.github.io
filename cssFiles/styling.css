@@ -210,13 +210,12 @@ nav, .sidebar {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    margin-bottom: 13px;  /* spacing between each field */
 }
 
 .form-group label {
@@ -245,23 +244,18 @@ nav, .sidebar {
 
 .form-status {
     font-family: "Karla", sans-serif;
-    font-size: 14px;
-    min-height: 16px;
+    font-size: 15px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    margin-top: -5px;       
+    margin-bottom: -5px;    
 }
 
-.form-status.success { 
-    color: #2a6e2a; 
-    gap: 5px;
-    font-size: 14px;
-}
-
-.form-status.error   { 
-    color: #a02020; 
-    gap: 5px;
-    font-size: 14px;
-}
+.form-status.success { color: #2a6e2a; }
+.form-status.error   { color: #a02020; }
 
 .contact-form .go-btn {
-    margin-top: -16px;    
-    font-size: 17px;        
+    font-size: 17px;
+    margin-top: 6px;       
 }
