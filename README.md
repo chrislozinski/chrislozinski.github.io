@@ -27,8 +27,11 @@
 
 *diagram made using : https://tree.nathanfriend.com/ - a great resource, check it out!*
 
+Additionally for the functionality of the contacrt form, I used the resource: https://github.com/Basharath/FormEasy
+which has been super helpful and amazing for adding in a functional message form.
+
 ## graphics and assets
-- all graphics and assets are made by hand, by me, (no ai, hell no) in photoshop and illustrator
+- currently, the icon art is designed by Gerrit Halfmann as a part of "Pixelarticons"
 - all of the assets for this website and on this repo fall under a CC BY-NC-SA License which: 
     - *enables reusers to distribute, remix, adapt, and build upon the material in any medium or format for* **noncommercial purposes only**, *and only so long as* **attribution is given to the creator.** *(meaning explicit credit)*
     - *If you remix, adapt, or build upon the material, you must license the modified material under identical terms.* **CC BY-NC-SA** *includes the following elements:*
