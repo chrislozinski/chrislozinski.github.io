@@ -102,7 +102,7 @@ nav, .sidebar {
     font-family: "Karla", sans-serif;
     font-weight: 300;
     height: 100%; 
-    width: 175px; /* changed this so its a little smaller */
+    width: 180px; /* changed this so its a little smaller */
     position: fixed; 
     top: 0;
     left: 0;
@@ -139,16 +139,17 @@ nav, .sidebar {
 /* main content area */
 #main {
     /*transition: margin-left 0.5s;*/
-    margin-left: 180px;
+    margin-left: 185px;
     padding: 20px;
-    max-width: calc(100% - 175px); /* in order to stop content from going under sidebar */
+    max-width: calc(100% - 180px); /* in order to stop content from going under sidebar */
     box-sizing: border-box;
     padding-top: 30px;
 }
 
 /* accordion list  styling */
 .accordion {
-    max-width: 600px;
+    width: 100%;      
+    max-width: 800px; 
     margin-top: 20px;
     border-top: 1px solid #124783; 
 }
@@ -215,7 +216,8 @@ nav, .sidebar {
 
 /* contact form */
 .contact-form {
-    max-width: 500px;
+    width: 100%;
+    max-width: 650px; 
     margin-top: 20px;
     display: flex;
     flex-direction: column;
