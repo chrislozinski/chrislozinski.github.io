@@ -178,9 +178,46 @@ nav, .sidebar {
     font-family: "Karla", sans-serif; 
 }
 
+.accordion-header p {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    flex: 1;
+    margin: 0;
+}
+
+.accordion-date {
+    font-family: "Karla", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0;
+    margin-left: auto;
+    padding-right: 16px;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.accordion-item.active .accordion-date {
+    opacity: 0.6;
+}
+
+.accordion-tools {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.7;
+    margin: 0 0 8px;
+}
+
 .accordion-item.active .accordion-content {
     max-height: 300px;
+    padding-top: 2px;
     padding-bottom: 20px;
+}
+
+.accordion-item.active .accordion-header {
+    padding-bottom: 2px;
 }
 
 .go-btn {
@@ -213,6 +250,58 @@ nav, .sidebar {
         margin: auto; 
     }
 } */
+
+/* resume / experience page */
+.resume-section {
+    max-width: 750px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.resume-entry-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.resume-entry-title {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #124783;
+}
+
+.resume-entry-sub {
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #144b8a;
+}
+
+.resume-entry-location {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    color: #144b8a;
+    opacity: 0.7;
+}
+
+.resume-divider {
+    border: none;
+    border-top: 1px solid #124783;
+    margin: 8px 0 10px;
+}
+
+.resume-points {
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 /* contact form */
 .contact-form {
@@ -269,4 +358,548 @@ nav, .sidebar {
 .contact-form .go-btn {
     font-size: 17px;
     margin-top: 6px;       
+}
+
+
+/* redesign additions*/
+
+/* small monospace page label at the top of each page, e.g. "about" */
+.page-label {
+    font-family: "Inconsolata", monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    color: #144b8a;
+    opacity: 0.6;
+    margin: 0 0 14px 0;
+    display: block;
+}
+
+/* large light spectral page title below the label */
+.page-title {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.3;
+    color: #124783;
+    margin: 0 0 24px 0;
+    max-width: 90%;
+}
+
+/* italic emphasis within page titles */
+.page-title em {
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* paragraph block with hanging chevron outside the text edge */
+.page-body-block {
+    position: relative;
+    margin: 0 0 13px 16px; /* left margin creates space for the hanging chevron */
+    max-width: 90%;
+}
+
+/* chevron sits in the margin, text stays left-aligned */
+.page-body-block::before {
+    content: "›";
+    position: absolute;
+    left: -16px;
+    top: 1px;
+    font-family: "Inconsolata", monospace;
+    color: #124783;
+    opacity: 0.55;
+    font-size: 15px;
+}
+
+.page-body-block p {
+    font-family: "Karla", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #144b8a;
+    margin: 0;
+}
+
+/* experience items*/
+
+/* top hairline on each entry */
+.exp-entry {
+    border-top: 1px solid rgba(18, 71, 131, 0.3);
+    padding: 18px 0 6px;
+    max-width: 90%; /* to stop it from hitting the edge */
+}
+
+/* company name left, date right on one line */
+.exp-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.exp-entry-company {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #124783;
+}
+
+.exp-entry-date {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.65;
+    white-space: nowrap;
+}
+
+.exp-entry-role {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    color: #144b8a;
+    opacity: 0.85;
+    margin: 0 0 10px 0;
+}
+
+/* bullet list using a small pixel square instead of the default browser bullet */
+.exp-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.exp-points li {
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #144b8a;
+    padding-left: 16px;
+    position: relative;
+}
+
+/* small pixel square bullet */
+.exp-points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    background: #124783;
+    opacity: 0.65;
+}
+
+/* bracketed monospace skill tags */
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.exp-tag {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #124783;
+}
+
+/* projects list */
+
+/* wrapper replaces the old accordion on the projects page */
+.project-list {
+    width: 100%;
+    max-width: 850px; 
+    margin-top: 8px;
+}
+
+/* each clickable project row */
+.project-row {
+    border-top: 1px solid rgba(18, 71, 131, 0.3);
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.project-row:last-child {
+    border-bottom: 1px solid rgba(18, 71, 131, 0.3);
+}
+
+.project-row:hover {
+    opacity: 0.75;
+}
+
+/* pixel icon slot */
+.project-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: #124783;
+}
+
+/* text content in the middle of the row */
+.project-row-body {
+    flex: 1;
+}
+
+.project-row-title-line {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.project-row-name {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: #124783;
+}
+
+.project-row-year {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.65;
+}
+
+/* one-line tools and summary */
+.project-row-meta {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.7;
+    margin: 4px 0 0 0;
+}
+
+/* right-edge chevron indicating the row opens a page */
+.project-row-arrow {
+    font-family: "Inconsolata", monospace;
+    font-size: 18px;
+    color: #124783;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* project detail page */
+
+.project-detail-back {
+    font-family: "Inconsolata", monospace;
+    font-size: 13px;
+    color: #144b8a;
+    opacity: 0.7;
+    display: inline-block;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.project-detail-back:hover {
+    opacity: 1;
+}
+
+.project-detail-title {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #124783;
+    margin: 0 0 6px 0;
+}
+
+.project-detail-meta {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.7;
+    margin: 0 0 22px 0;
+}
+
+/* screenshots, images will fill this or it show a placeholder */
+.project-screenshots {
+    display: flex;
+    gap: 12px;
+    max-width: 720px;
+    margin: 0 0 22px 0;
+}
+
+.project-screenshot-main {
+    flex: 2;
+    min-height: 180px;
+    background: #dccfb6;
+    border: 1px solid rgba(18, 71, 131, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-screenshot-side {
+    flex: 1;
+    min-height: 180px;
+    background: #dccfb6;
+    border: 1px solid rgba(18, 71, 131, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* placeholder text inside screenshot areas before images are added */
+.project-screenshot-placeholder {
+    font-family: "Inconsolata", monospace;
+    font-size: 11px;
+    color: #124783;
+    opacity: 0.45;
+}
+
+.project-detail-description {
+    font-family: "Karla", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #144b8a;
+    max-width: 680px;
+    margin: 0 0 20px 0;
+}
+
+.project-detail-link {
+    font-family: "Inconsolata", monospace;
+    font-size: 13px;
+    color: #124783;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(18, 71, 131, 0.4);
+    padding-bottom: 1px;
+}
+
+.project-detail-link:hover {
+    opacity: 0.7;
+}
+
+/* contact form label restyled to monospace*/
+
+/* override the existing Karla label to use monospace, matching the data rule */
+.form-group label {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* name and email sit side by side */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* site footer */
+
+/* footer bar loaded once in index.html, always at the bottom of the content area */
+#site-footer {
+    margin-left: 185px;
+    padding: 10px 20px 16px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(18, 71, 131, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left,
+.footer-right {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.55;
+}
+
+.footer-right {
+    opacity: 0.4;
+}
+
+/* mobile */
+@media (max-width: 700px) {
+
+    /* hide the fixed sidebar */
+    .sidebar {
+        display: none;
+    }
+
+    /* mobile top bar replaces the sidebar */
+    #mobile-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #124783;
+        padding: 14px 18px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .mobile-topbar-name {
+        font-family: "Spectral", serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: #f0e7d5;
+        text-decoration: none;
+    }
+
+    /* thin chevron toggle button */
+    #mobile-menu-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* the drawer that slides down when the toggle is tapped */
+    #mobile-drawer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #124783;
+        z-index: 999;
+        flex-direction: column;
+    }
+
+    #mobile-drawer.open {
+        display: flex;
+    }
+
+    .mobile-drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(240, 231, 213, 0.2);
+    }
+
+    .mobile-drawer-name {
+        font-family: "Spectral", serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: #f0e7d5;
+    }
+
+    .mobile-drawer-nav {
+        flex: 1;
+        padding: 8px 0;
+    }
+
+    /* each nav item in the drawer */
+    .mobile-drawer-nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 20px;
+        font-family: "Karla", sans-serif;
+        font-size: 16px;
+        color: #EDEDF5;
+        text-decoration: none;
+        opacity: 0.72;
+    }
+
+    .mobile-drawer-nav a.active {
+        opacity: 1;
+        box-shadow: inset 3px 0 0 #f0e7d5;
+    }
+
+    .mobile-drawer-nav a:hover {
+        background: #16569e;
+        opacity: 1;
+    }
+
+    .mobile-drawer-footer {
+        padding: 14px 20px;
+        border-top: 1px solid rgba(240, 231, 213, 0.2);
+        font-family: "Inconsolata", monospace;
+        font-size: 11px;
+        color: #f0e7d5;
+        opacity: 0.5;
+    }
+
+    /* push content below the fixed top bar */
+    #main {
+        margin-left: 0;
+        max-width: 100%;
+        padding-top: 70px;
+    }
+
+    /* footer spans full width on mobile */
+    #site-footer {
+        margin-left: 0;
+    }
+
+    /* page title smaller on mobile */
+    .page-title {
+        font-size: 22px;
+    }
+
+    /* screenshots stack on mobile */
+    .project-screenshots {
+        flex-direction: column;
+    }
+}
+
+/* hide mobile topbar and drawer on desktop */
+@media (min-width: 701px) {
+    #mobile-topbar {
+        display: none;
+    }
+
+    #mobile-drawer {
+        display: none !important;
+    }
+}
+
+/* close button in the mobile drawer */
+.mobile-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* stroke and size styles for mobile SVG icons */
+.mobile-chevron {
+    width: 22px;
+    height: 13px;
+    fill: none;
+}
+
+.mobile-close-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+}
+
+.mobile-chevron path,
+.mobile-close-icon path {
+    stroke: #f0e7d5;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+}
+
+/* utility class to hide an element by default */
+.hidden {
+    display: none;
+}
+
+/* align the page-label baseline to the Lozinski line in the sidebar */
+/* original padding-top: 30px is left untouched above */
+#main {
+    padding-top: 86px;
 }

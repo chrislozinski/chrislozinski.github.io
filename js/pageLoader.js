@@ -15,6 +15,11 @@ async function loadPage(page) {
     if (typeof initContactForm === 'function') {
         initContactForm();
     }
+
+    // build the project list rows if we're on the projects page
+    if (typeof initProjects === 'function') {
+        initProjects();
+    }
 }
 
 // this handles nav bar clicks
@@ -31,6 +36,15 @@ document.addEventListener('click', e => {
 
 });
 
-// by default we always load the home page instead of the index, so we just send the page name home into the load page function
-const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home';
-loadPage(initialPage);
+// by default we always load the home page instead of the index, so we just send the page name about into the load page function
+const initialPage = window.location.hash ? window.location.hash.substring(1) : 'about';
+
+// if hash points to project detail, show it from the data instead of fetching an html file
+if (initialPage.startsWith('project-') && typeof showProjectDetail === 'function') {
+    // Load the projects page first so the templates enter the DOM, THEN show the detail view
+    loadPage('projects').then(() => {
+        showProjectDetail(initialPage);
+    });
+} else {
+    loadPage(initialPage);
+}
