@@ -1,9 +1,9 @@
 <h1 class="page-title">Projects</h1>
 
-<!-- project rows built dynamically by initProjects() -->
+<!-- project rows built dynamically by initProjects() in projectLoader.js-->
 <div class="project-list"></div>
 
-<!-- template for a single project row -->
+<!-- template for a each individual project in the row on first project page-->
 <template id="project-row-template">
     <div class="project-row">
         <span class="project-row-icon"></span>
@@ -16,14 +16,19 @@
         </div>
         <span class="project-row-arrow">›</span>
     </div>
+
 </template>
 
-<!-- template for project detail view -->
+<!-- template for project detail page -->
 <template id="project-detail-template">
     <button class="project-detail-back" onclick="loadPage('projects'); history.pushState(null,'','#projects');">‹ back to projects</button>
+
     <h2 class="project-detail-title"></h2>
     <p class="project-detail-meta"></p>
+
     <div class="project-screenshots"></div>
+
     <p class="project-detail-description"></p>
     <a class="project-detail-link" href="#" target="_blank"></a>
+
 </template>

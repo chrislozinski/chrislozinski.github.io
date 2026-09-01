@@ -18,7 +18,7 @@ async function loadPage(page) {
 
     // build the project list rows if we're on the projects page
     if (typeof initProjects === 'function') {
-        initProjects();
+        await initProjects();
     }
 
     if (typeof setActiveNav === 'function') {
