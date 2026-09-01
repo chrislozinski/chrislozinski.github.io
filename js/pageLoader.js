@@ -20,11 +20,15 @@ async function loadPage(page) {
     if (typeof initProjects === 'function') {
         initProjects();
     }
+
+    if (typeof setActiveNav === 'function') {
+        setActiveNav(page);
+    }
 }
 
 // this handles nav bar clicks
 document.addEventListener('click', e => {
-    if (e.target.tagName === 'A' && e.target.closest('#navbar')) { // check if an element in the a tag is clicked, since thats a link to another page and if thats within my navbar
+    if (e.target.tagName === 'A' && (e.target.closest('#navbar') || e.target.classList.contains('mobile-topbar-name'))) { // check if an element in the a tag is clicked, since thats a link to another page and if thats within my navbar
         e.preventDefault(); // we dont want to reload the page which is the default behaviour so we prevent it
 
         const page = e.target.getAttribute('href').substring(1) // get the value from the href so the page variable stores the page clicked on by the user, and strip the hash

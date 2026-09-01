@@ -18,11 +18,20 @@ async function loadNavBar() {
         const page = link.getAttribute('href').substring(1);
         if (navIcons[page]) link.insertAdjacentHTML('afterbegin', navIcons[page]);
     });
+
+    const initialPage = window.location.hash ? window.location.hash.substring(1) : 'about';
+    setActiveNav(initialPage);
 }
 
 // finally we just wait for stucture of the page to be ready 
 // then call the load nav bar function to load the nav bar on the new page 
-document.addEventListener('DOMContentLoaded', loadNavBar); 
+document.addEventListener('DOMContentLoaded', loadNavBar);
+
+function setActiveNav(page) {
+    document.querySelectorAll('#navbar a[href^="#"]:not(.nav-title)').forEach(a => a.classList.remove('active'));
+    const target = document.querySelector(`#navbar a[href="#${page}"]:not(.nav-title)`);
+    if (target) target.classList.add('active');
+}
 
 // lastly, we load footer.html into #site-footer using the same pattern as the nav bar above
 document.addEventListener('DOMContentLoaded', () => {
@@ -85,7 +94,13 @@ function initMobileNav() {
         chevUp.classList.add('hidden');
     }
  
-    if (toggle) toggle.addEventListener('click', openDrawer);
+    // the topbar button opens or closes depending on current drawer state
+    function toggleDrawer() {
+        if (drawer.classList.contains('open')) closeDrawer();
+        else openDrawer();
+    }
+
+    if (toggle) toggle.addEventListener('click', toggleDrawer);
     if (close)  close.addEventListener('click', closeDrawer);
  
     // wire each drawer link into loadPage and close the drawer after

@@ -35,10 +35,22 @@ body {
     margin: 0; 
     font-family: "Inconsolata", monospace;
     /* background-color: #2660A4; *//* changed the background colour for better contrast 525C68*/
-    background-color: #ccbfa9e9; 
+    background-color: #ccbfa9e9;
     color: #144b8a;
     position: relative;
     min-height: 100vh;
+    /* column layout so the footer can be pushed to the bottom on short pages */
+    display: flex;
+    flex-direction: column;
+}
+
+/* #main grows to fill leftover height, keeping #site-footer pinned to the bottom */
+#main {
+    flex: 1 0 auto;
+}
+
+#site-footer {
+    flex-shrink: 0;
 }
 
 /* noise effect */
@@ -127,6 +139,12 @@ nav, .sidebar {
 .sidebar a:hover {
    /* background-color: #575757;*/
    background-color: #16569e;
+}
+
+/* the page youre currently on stays highlighted, a touch darker than the sidebar like its pressed in */
+.sidebar a.active {
+    background-color: #0e3a70;
+    box-shadow: inset 3px 0 0 #f0e7d5;
 }
 
 .nav-icon {
@@ -901,5 +919,5 @@ nav, .sidebar {
 /* align the page-label baseline to the Lozinski line in the sidebar */
 /* original padding-top: 30px is left untouched above */
 #main {
-    padding-top: 86px;
+    padding-top: 87px;
 }
