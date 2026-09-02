@@ -34,7 +34,6 @@
 body {
     margin: 0; 
     font-family: "Inconsolata", monospace;
-    /* background-color: #2660A4; *//* changed the background colour for better contrast 525C68*/
     background-color: #ccbfa9e9;
     color: #144b8a;
     position: relative;
@@ -82,8 +81,6 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     padding: 30px 0px;
-    /*background-color: #1B1B1E;*/
-   /* background-color: #012966;*/
     background-color: #124783;
     text-align: left;
     padding-top: 50px;
@@ -106,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent; /* so the container doesnt show like the rest of the nav bar */
 }
 
-nav, .sidebar {
+.sidebar {
     font-family: "Karla", sans-serif;
 }
 
@@ -118,7 +115,6 @@ nav, .sidebar {
     position: fixed; 
     top: 0;
     left: 0;
-   /*  background-color: #1B1B1E; */
     background-color: #124783; 
     overflow-x: hidden;
     padding-top: 155px;
@@ -137,7 +133,6 @@ nav, .sidebar {
 }
 
 .sidebar a:hover {
-   /* background-color: #575757;*/
    background-color: #16569e;
 }
 
@@ -156,7 +151,6 @@ nav, .sidebar {
 
 /* main content area */
 #main {
-    /*transition: margin-left 0.5s;*/
     margin-left: 185px;
     padding: 30px 20px 20px 20px;
     max-width: calc(100% - 180px); /* in order to stop content from going under sidebar */
@@ -181,10 +175,6 @@ nav, .sidebar {
     align-items: center;
     padding: 15px 0;
     cursor: pointer;
-}
-
-.accordion-header p {
-    margin: 0;
 }
 
 /* when expanded */
@@ -252,21 +242,6 @@ nav, .sidebar {
 .go-btn:hover {
     opacity: 0.9; 
 }
-
-/*@media (min-width: 992px) {
-    main {
-        padding: 20px; 
-        font-size: 18px; 
-    }
-}
-*/
-/*  large devices  */
-/*@media (min-width: 1200px) {
-    main {
-        max-width: 1140px; 
-        margin: auto; 
-    }
-} */
 
 /* resume / experience page */
 .resume-section {
@@ -429,7 +404,7 @@ nav, .sidebar {
 /* top hairline on each entry */
 .exp-entry {
     border-top: 1px solid rgba(18, 71, 131, 0.3);
-    padding: 18px 0 6px;
+    padding: 18px 0 18px;
     max-width: 90%; /* to stop it from hitting the edge */
 }
 
@@ -452,20 +427,25 @@ nav, .sidebar {
 .exp-entry-date {
     font-family: "Inconsolata", monospace;
     font-size: 12px;
-    color: #144b8a;
-    opacity: 0.65;
+    color: #124783;
     white-space: nowrap;
 }
 
 .exp-entry-role {
     font-family: "Karla", sans-serif;
+    font-weight: 400;
     font-size: 13px;
     color: #144b8a;
-    opacity: 0.85;
     margin: 0 0 10px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
 }
 
-/* bullet list using a small pixel square instead of the default browser bullet */
+.exp-entry-role-location {
+    font-weight: 300;
+}
+
 .exp-points {
     list-style: none;
     padding: 0;
@@ -622,8 +602,8 @@ nav, .sidebar {
     margin: 0 0 22px 0;
 }
 
-.project-screenshot-main {
-    flex: 2;
+.project-screenshot-main,
+.project-screenshot-side {
     min-height: 180px;
     background: #dccfb6;
     border: 1px solid rgba(18, 71, 131, 0.25);
@@ -632,15 +612,8 @@ nav, .sidebar {
     justify-content: center;
 }
 
-.project-screenshot-side {
-    flex: 1;
-    min-height: 180px;
-    background: #dccfb6;
-    border: 1px solid rgba(18, 71, 131, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.project-screenshot-main { flex: 2; }
+.project-screenshot-side { flex: 1; }
 
 /* placeholder text inside screenshot areas before images are added */
 .project-screenshot-placeholder {

@@ -21,6 +21,11 @@ async function loadPage(page) {
         await initProjects();
     }
 
+    // build the experience entries if we're on the experience page
+    if (typeof initExperience === 'function') {
+        await initExperience();
+    }
+
     if (typeof setActiveNav === 'function') {
         setActiveNav(page);
     }

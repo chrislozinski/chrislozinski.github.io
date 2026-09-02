@@ -1,0 +1,48 @@
+[   
+    {
+        "company": "Kids Great Minds",
+        "date": "Apr 2026 - Sept 2026",
+        "role": "Lead Instructor",
+        "location": "Richmond Hill, ON",
+        "bullets": [
+            "Worked as a lead program instructor for a private education company partnered with local municipalities, such as Richmond Hill.",
+            "Lead a team of councillors, ensuring proper procedures and protocols were followed while maintaining a healthy and fun work environment."
+        ],
+        "tags": ["communication", "3D design", "java"]
+    },
+    {
+        "company": "Code Ninjas",
+        "date": "2024 - 2025",
+        "role": "Lead Coding Instructor, Co-Op",
+        "location": "Aurora & Richmond Hill, ON",
+        "bullets": [
+            "Advanced student proficiency in STEM programming concepts with a 100% student completion rate.",
+            "Taught distinct curriculum modules (Python, Lua, Javascript), delivering tailored instruction and hands-on guidance to students from ages 5 to 14 at two different franchises across two summers."
+        ],
+        "tags": ["python", "javascript", "teaching"]
+    },
+    {
+        "company": "Elections Canada / Ontario",
+        "date": "2021 · 2022 · 2025",
+        "role": "Central Poll Supervisor & Deputy Returning Officer",
+        "location": "Richmond Hill, ON",
+        "bullets": [
+            "Management of all aspects of the voting and registration process and all other day to day operations, guaranteeing compliance and good service.",
+            "Working in multiple elections, processed electors, revised their information, issued ballots using computer equipped with Elections Ontario and Canada software and handled scheduling of breaks.",
+            "Used the Elections Canada and Ontario software to organize, consolidate and revise elector's information in a large database of Canadian citizens."
+        ],
+        "tags": ["operations", "compliance", "data management"]
+    },
+    {
+        "company": "Mill Pond Card and Gift Co.",
+        "date": "2018 - 2022",
+        "role": "Digital Manager & Sales Associate",
+        "location": "Richmond Hill, ON",
+        "bullets": [
+            "Managed opening and closing duties in the retail store, as well as assisting customers with products and purchases.",
+            "Transferred store inventory from a Lightspeed POS to Shopify Liquid, using HTML5. Coded custom collection pages.",
+            "Contributed to a positive team environment by working collaboratively with co-workers and managers."
+        ],
+        "tags": ["html5", "shopify", "retail"]
+    }
+]
