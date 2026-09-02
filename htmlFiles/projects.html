@@ -12,7 +12,7 @@
                 <span class="project-row-name"></span>
                 <span class="project-row-year"></span>
             </div>
-            <p class="project-row-meta"></p>
+            <p class="project-row-subtitle"></p>
         </div>
         <span class="project-row-arrow">›</span>
     </div>
@@ -21,14 +21,14 @@
 
 <!-- template for project detail page -->
 <template id="project-detail-template">
-    <button class="project-detail-back" onclick="loadPage('projects'); history.pushState(null,'','#projects');">‹ back to projects</button>
+    <button class="project-detail-back" onclick="loadPage('projects'); history.pushState(null,'','#projects');">&lt; back to projects</button>
 
     <h2 class="project-detail-title"></h2>
-    <p class="project-detail-meta"></p>
+    <p class="project-detail-subtitle"></p>
 
     <div class="project-screenshots"></div>
 
     <p class="project-detail-description"></p>
-    <a class="project-detail-link" href="#" target="_blank"></a>
+    <div class="project-detail-links"></div>
 
 </template>
