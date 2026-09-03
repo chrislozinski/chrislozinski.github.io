@@ -1,2 +1,21 @@
-<h1>Experience</h1>
-<p>Hello! welcome to the experience page</p>
+<h1 class="page-title">Work Experience</h1>
+
+<!-- experience cards built by initExperience() in experienceLoader.js -->
+<div class="exp-list"></div>
+
+<!-- template for each individual experience entry -->
+<template id="exp-entry-template">
+    <div class="exp-entry">
+        <div class="exp-entry-header">
+            <span class="exp-entry-company"></span>
+            <span class="exp-entry-date"></span>
+        </div>
+        <p class="exp-entry-role">
+            <span class="exp-entry-role-title"></span>
+            <span class="exp-entry-role-sep">·</span>
+            <span class="exp-entry-role-location"></span>
+        </p>
+        <ul class="exp-points"></ul>
+        <div class="exp-tags"></div>
+    </div>
+</template>

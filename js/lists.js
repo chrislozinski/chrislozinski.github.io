@@ -6,7 +6,7 @@ function initAccordions() {
         header.onclick = () => {
             const item = header.parentElement;
             item.classList.toggle('active');
-            const icon = header.querySelector('span');
+            const icon = header.querySelector('.accordion-toggle');
             if (icon) {
                 icon.innerText = item.classList.contains('active') ? '-' : '+';
             }

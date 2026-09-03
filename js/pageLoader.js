@@ -15,11 +15,25 @@ async function loadPage(page) {
     if (typeof initContactForm === 'function') {
         initContactForm();
     }
+
+    // build the project list rows if we're on the projects page
+    if (typeof initProjects === 'function') {
+        await initProjects();
+    }
+
+    // build the experience entries if we're on the experience page
+    if (typeof initExperience === 'function') {
+        await initExperience();
+    }
+
+    if (typeof setActiveNav === 'function') {
+        setActiveNav(page);
+    }
 }
 
 // this handles nav bar clicks
 document.addEventListener('click', e => {
-    if (e.target.tagName === 'A' && e.target.closest('#navbar')) { // check if an element in the a tag is clicked, since thats a link to another page and if thats within my navbar
+    if (e.target.tagName === 'A' && (e.target.closest('#navbar') || e.target.classList.contains('mobile-topbar-name'))) { // check if an element in the a tag is clicked, since thats a link to another page and if thats within my navbar
         e.preventDefault(); // we dont want to reload the page which is the default behaviour so we prevent it
 
         const page = e.target.getAttribute('href').substring(1) // get the value from the href so the page variable stores the page clicked on by the user, and strip the hash
@@ -31,6 +45,15 @@ document.addEventListener('click', e => {
 
 });
 
-// by default we always load the home page instead of the index, so we just send the page name home into the load page function
-const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home';
-loadPage(initialPage);
+// by default we always load the home page instead of the index, so we just send the page name about into the load page function
+const initialPage = window.location.hash ? window.location.hash.substring(1) : 'about';
+
+// if hash points to project detail, show it from the data instead of fetching an html file
+if (initialPage.startsWith('project-') && typeof showProjectDetail === 'function') {
+    // Load the projects page first so the templates enter the DOM, THEN show the detail view
+    loadPage('projects').then(() => {
+        showProjectDetail(initialPage);
+    });
+} else {
+    loadPage(initialPage);
+}

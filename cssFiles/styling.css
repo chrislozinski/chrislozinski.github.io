@@ -32,13 +32,24 @@
 
 /*aaaand back to our regular styling for css elements *non font stuff** */
 body {
-    margin: 0; 
+    margin: 0;
     font-family: "Inconsolata", monospace;
-    /* background-color: #2660A4; *//* changed the background colour for better contrast 525C68*/
-    background-color: #ccbfa9e9; 
+    background-color: #ccbfa9e9;
     color: #144b8a;
     position: relative;
     min-height: 100vh;
+    /* column layout so the footer can be pushed to the bottom on short pages */
+    display: flex;
+    flex-direction: column;
+}
+
+/* #main grows to fill leftover height, keeping #site-footer pinned to the bottom */
+#main {
+    flex: 1 0 auto;
+}
+
+#site-footer {
+    flex-shrink: 0;
 }
 
 /* noise effect */
@@ -49,8 +60,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; 
-    z-index: 9999; 
+    pointer-events: none;
+    z-index: 1; /* sits just above page content so the grain shows over text and the coloured bars */
     opacity: 0.05; /* how strong the noise is */
     
     /*  generate the grain using svg */
@@ -70,8 +81,6 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     padding: 30px 0px;
-    /*background-color: #1B1B1E;*/
-   /* background-color: #012966;*/
     background-color: #124783;
     text-align: left;
     padding-top: 50px;
@@ -94,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent; /* so the container doesnt show like the rest of the nav bar */
 }
 
-nav, .sidebar {
+.sidebar {
     font-family: "Karla", sans-serif;
 }
 
@@ -106,7 +115,6 @@ nav, .sidebar {
     position: fixed; 
     top: 0;
     left: 0;
-   /*  background-color: #1B1B1E; */
     background-color: #124783; 
     overflow-x: hidden;
     padding-top: 155px;
@@ -125,8 +133,13 @@ nav, .sidebar {
 }
 
 .sidebar a:hover {
-   /* background-color: #575757;*/
    background-color: #16569e;
+}
+
+/* the page youre currently on stays highlighted, a touch darker than the sidebar like its pressed in */
+.sidebar a.active {
+    background-color: #0e3a70;
+    box-shadow: inset 3px 0 0 #f0e7d5;
 }
 
 .nav-icon {
@@ -138,12 +151,10 @@ nav, .sidebar {
 
 /* main content area */
 #main {
-    /*transition: margin-left 0.5s;*/
     margin-left: 185px;
-    padding: 20px;
+    padding: 30px 20px 20px 20px;
     max-width: calc(100% - 180px); /* in order to stop content from going under sidebar */
     box-sizing: border-box;
-    padding-top: 30px;
 }
 
 /* accordion list  styling */
@@ -166,10 +177,6 @@ nav, .sidebar {
     cursor: pointer;
 }
 
-.accordion-header p {
-    margin: 0;
-}
-
 /* when expanded */
 .accordion-content {
     max-height: 0;
@@ -178,9 +185,46 @@ nav, .sidebar {
     font-family: "Karla", sans-serif; 
 }
 
+.accordion-header p {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    flex: 1;
+    margin: 0;
+}
+
+.accordion-date {
+    font-family: "Karla", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0;
+    margin-left: auto;
+    padding-right: 16px;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.accordion-item.active .accordion-date {
+    opacity: 0.6;
+}
+
+.accordion-tools {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.7;
+    margin: 0 0 8px;
+}
+
 .accordion-item.active .accordion-content {
     max-height: 300px;
+    padding-top: 2px;
     padding-bottom: 20px;
+}
+
+.accordion-item.active .accordion-header {
+    padding-bottom: 2px;
 }
 
 .go-btn {
@@ -199,20 +243,57 @@ nav, .sidebar {
     opacity: 0.9; 
 }
 
-/*@media (min-width: 992px) {
-    main {
-        padding: 20px; 
-        font-size: 18px; 
-    }
+/* resume / experience page */
+.resume-section {
+    max-width: 750px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
-*/
-/*  large devices  */
-/*@media (min-width: 1200px) {
-    main {
-        max-width: 1140px; 
-        margin: auto; 
-    }
-} */
+
+.resume-entry-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.resume-entry-title {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #124783;
+}
+
+.resume-entry-sub {
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #144b8a;
+}
+
+.resume-entry-location {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    color: #144b8a;
+    opacity: 0.7;
+}
+
+.resume-divider {
+    border: none;
+    border-top: 1px solid #124783;
+    margin: 8px 0 10px;
+}
+
+.resume-points {
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 /* contact form */
 .contact-form {
@@ -270,3 +351,571 @@ nav, .sidebar {
     font-size: 17px;
     margin-top: 6px;       
 }
+
+
+/* redesign additions*/
+
+/* page title heading */
+.page-title {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+}
+
+/* page subtitle paragraph below the title */
+.page-subtitle {
+    font-family: "Karla", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #144b8a;
+    margin: 0 0 16px 0;
+}
+
+/* paragraph block with hanging chevron outside the text edge */
+.page-body-block {
+    position: relative;
+    margin: 0 0 13px 16px; /* left margin creates space for the hanging chevron */
+    max-width: 90%;
+}
+
+/* chevron sits in the margin, text stays left-aligned */
+/* used by all bullet points on the site */
+.page-body-block::before,
+.exp-points li::before {
+    content: "›";
+    position: absolute;
+    left: -16px;
+    top: 1px;
+    font-family: "Inconsolata", monospace;
+    color: #124783;
+    opacity: 0.55;
+    font-size: 15px;
+}
+
+.page-body-block p {
+    font-family: "Karla", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #144b8a;
+    margin: 0;
+}
+
+/* experience items*/
+
+/* top hairline on each entry */
+.exp-entry {
+    border-top: 1px solid rgba(18, 71, 131, 0.3);
+    padding: 18px 0 18px;
+    max-width: 90%; /* to stop it from hitting the edge */
+}
+
+/* company name left, date right on one line */
+.exp-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.exp-entry-company {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #124783;
+}
+
+.exp-entry-date {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #124783;
+    white-space: nowrap;
+}
+
+.exp-entry-role {
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #144b8a;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.exp-entry-role-location {
+    font-weight: 300;
+}
+
+.exp-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.exp-points li {
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #144b8a;
+    margin-left: 16px;
+    position: relative;
+}
+
+
+/* bracketed monospace skill tags */
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.exp-tag {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #124783;
+}
+
+/* projects list */
+
+/* wrapper replaces the old accordion on the projects page */
+.project-list {
+    width: 100%;
+    max-width: 850px; 
+    margin-top: 8px;
+}
+
+/* each clickable project row */
+.project-row {
+    border-top: 1px solid rgba(18, 71, 131, 0.3);
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.project-row:last-child {
+    border-bottom: 1px solid rgba(18, 71, 131, 0.3);
+}
+
+.project-row:hover {
+    opacity: 0.75;
+}
+
+/* pixel icon slot */
+.project-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: #124783;
+}
+
+/* image based icons */
+.project-row-icon img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+/* converts black svg pixel art icons to the site colour */
+.project-row-icon img.project-icon-svg {
+    filter: invert(22%) sepia(89%) saturate(734%) hue-rotate(192deg) brightness(87%) contrast(98%);
+}
+
+/* text content in the middle of the row */
+.project-row-body {
+    flex: 1;
+}
+
+.project-row-title-line {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.project-row-name {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: #124783;
+}
+
+.project-row-year {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.65;
+}
+
+/* one-line tools and summary */
+.project-row-subtitle {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.7;
+    margin: 4px 0 0 0;
+}
+
+/* right-edge chevron indicating the row opens a page */
+.project-row-arrow {
+    font-family: "Inconsolata", monospace;
+    font-size: 18px;
+    color: #124783;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* project detail page */
+
+.project-detail-back {
+    font-family: "Inconsolata", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #144b8a;
+    opacity: 0.7;
+    display: inline-block;
+    margin: 35px 0 6px 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.project-detail-back:hover {
+    opacity: 1;
+}
+
+.project-detail-title {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #124783;
+    margin: 0 0 6px 0;
+}
+
+.project-detail-subtitle {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.7;
+    margin: 0 0 22px 0;
+}
+
+/* screenshots: main image full width on top, the rest share a row below, each with a caption underneath */
+.project-screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 720px;
+    margin: 0 0 22px 0;
+}
+
+.project-screenshot-main { flex-basis: 100%; margin: 0; }
+.project-screenshot-side { flex: 1; margin: 0; }
+
+/* the screenshot itself, shown at its natural aspect ratio with a border */
+.project-screenshot-main img,
+.project-screenshot-side img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(18, 71, 131, 0.35);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* empty framed box when a screenshot has no image yet */
+.project-screenshot-placeholder {
+    display: block;
+    width: 100%;
+    height: 160px;
+    background: #dccfb6;
+    border: 1px solid rgba(18, 71, 131, 0.25);
+}
+
+/* caption under each screenshot*/
+.project-screenshot-label {
+    font-family: "Inconsolata", monospace;
+    font-size: 11px;
+    color: #124783;
+    opacity: 0.55;
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* fullscreen image viewer shown when a screenshot is clicked */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(18, 71, 131, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    color: #f0e7d5;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.project-detail-description {
+    font-family: "Karla", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #144b8a;
+    max-width: 680px;
+    margin: 0 0 20px 0;
+}
+
+/* holds up to a few links in a row */
+.project-detail-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.project-detail-link {
+    font-family: "Inconsolata", monospace;
+    font-size: 13px;
+    color: #124783;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(18, 71, 131, 0.4);
+    padding-bottom: 1px;
+}
+
+.project-detail-link:hover {
+    opacity: 0.7;
+}
+
+
+/* name and email sit side by side */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* site footer */
+
+/* footer bar loaded once in index.html, always at the bottom of the content area */
+#site-footer {
+    margin-left: 185px;
+    padding: 10px 20px 16px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(18, 71, 131, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left,
+.footer-right {
+    font-family: "Inconsolata", monospace;
+    font-size: 12px;
+    color: #144b8a;
+    opacity: 0.55;
+}
+
+.footer-right {
+    opacity: 0.4;
+}
+
+/* mobile */
+@media (max-width: 700px) {
+
+    /* hide the fixed sidebar */
+    .sidebar {
+        display: none;
+    }
+
+    /* mobile top bar replaces the sidebar */
+    #mobile-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #124783;
+        padding: 14px 18px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .mobile-topbar-name {
+        font-family: "Spectral", serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: #f0e7d5;
+        text-decoration: none;
+    }
+
+    /* thin chevron toggle button */
+    #mobile-menu-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* the drawer that slides down when the toggle is tapped */
+    #mobile-drawer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #124783;
+        z-index: 999;
+        flex-direction: column;
+    }
+
+    #mobile-drawer.open {
+        display: flex;
+    }
+
+    .mobile-drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(240, 231, 213, 0.2);
+    }
+
+    .mobile-drawer-name {
+        font-family: "Spectral", serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: #f0e7d5;
+    }
+
+    .mobile-drawer-nav {
+        flex: 1;
+        padding: 8px 0;
+    }
+
+    /* each nav item in the drawer */
+    .mobile-drawer-nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 20px;
+        font-family: "Karla", sans-serif;
+        font-size: 16px;
+        color: #EDEDF5;
+        text-decoration: none;
+        opacity: 0.72;
+    }
+
+    .mobile-drawer-nav a.active {
+        opacity: 1;
+        box-shadow: inset 3px 0 0 #f0e7d5;
+    }
+
+    .mobile-drawer-nav a:hover {
+        background: #16569e;
+        opacity: 1;
+    }
+
+    .mobile-drawer-footer {
+        padding: 14px 20px;
+        border-top: 1px solid rgba(240, 231, 213, 0.2);
+        font-family: "Inconsolata", monospace;
+        font-size: 11px;
+        color: #f0e7d5;
+        opacity: 0.5;
+    }
+
+    /* push content below the fixed top bar */
+    #main {
+        margin-left: 0;
+        max-width: 100%;
+        padding-top: 70px;
+    }
+
+    /* footer spans full width on mobile */
+    #site-footer {
+        margin-left: 0;
+    }
+
+    /* page title smaller on mobile */
+    .page-title {
+        font-size: 22px;
+    }
+
+    /* screenshots stack on mobile */
+    .project-screenshots {
+        flex-direction: column;
+    }
+
+    .project-detail-back {
+        margin-top: 16px;
+    }
+}
+
+/* hide mobile topbar and drawer on desktop */
+@media (min-width: 701px) {
+    #mobile-topbar {
+        display: none;
+    }
+
+    #mobile-drawer {
+        display: none !important;
+    }
+}
+
+/* close button in the mobile drawer */
+.mobile-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* stroke and size styles for mobile SVG icons */
+.mobile-chevron {
+    width: 22px;
+    height: 13px;
+    fill: none;
+}
+
+.mobile-close-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+}
+
+.mobile-chevron path,
+.mobile-close-icon path {
+    stroke: #f0e7d5;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+}
+
+/* utility class to hide an element by default */
+.hidden {
+    display: none;
+}
+

@@ -1,0 +1,30 @@
+<!-- mobile top bar, shown when width is below 700px -->
+<div id="mobile-topbar">
+    <a href="#about" class="mobile-topbar-name"></a>
+    <button id="mobile-menu-toggle" aria-label="open navigation">
+        <svg id="mobile-chevron-down" class="mobile-chevron" viewBox="0 0 22 13">
+            <path d="M3 3 L11 10 L19 3"/>
+        </svg>
+        
+        <svg id="mobile-chevron-up" class="mobile-chevron hidden" viewBox="0 0 22 13">
+            <path d="M3 10 L11 3 L19 10"/>
+        </svg>
+    </button>
+</div>
+
+<!-- nav drawer, name, links, and footer pulled from existing site elements -->
+<div id="mobile-drawer">
+    <div class="mobile-drawer-header">
+        <span class="mobile-drawer-name"></span>
+        
+        <button id="mobile-menu-close" class="mobile-close-btn" aria-label="close navigation">
+            <svg class="mobile-close-icon" viewBox="0 0 16 16">
+                <path d="M3 3 L13 13 M13 3 L3 13"/>
+            </svg>
+        </button>
+
+    </div>
+    
+    <nav class="mobile-drawer-nav"></nav>
+    <div class="mobile-drawer-footer"></div>
+</div>
