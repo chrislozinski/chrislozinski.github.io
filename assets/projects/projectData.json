@@ -1,22 +1,26 @@
 [
     {
         "slug": "project-os",
-        "name": "STEM Education Focused OS",
+        "name": "Linux OS for Focused Learning",
         "year": "2026",
-        "tools": ["linux", "shell"],
-        "subtitle": "Linux Debian based locked down OS for focused STEM education",
+        "tools": ["linux", "docker", "python", "shell"],
+        "subtitle": "Debian based locked down OS for focused STEM education",
         "icon": "assets/icons/book-open.svg",
         "description": [
             "Built on a minimal Debian install, this project specifically tailored towards K-12 STEM education.",
             "System boots into a restricted environment to maximize student focus and retention on complex topics.",
+            "A key feature is Microsoft Makecode, a block coding editor similar to Scratch, which runs a static web app on the system, requiring no internet connection or login",
+            "Teachers are able to design customized tutorials for their students on Makecode using a lesson builder application built in Python. ",
+            "The lesson's are enabled or disabled through a local mDNS network rather than through external cloud providers or services, making it scalable and accesible for remote and small school boards.",
             "Developed as a Computer Science Project course under the supervision of Prof. Stefan Kremer at the University of Guelph."
         ],
         "screenshots": [
-            { "label": "boot environment", "src": "" },
-            { "label": "lesson mode", "src": "" }
+            { "label": "lesson builder teacher app home page with all classes", "src": "assets/projects/lessonbuilder-classlist.png" },
+            { "label": "lesson builder teacher app while creating a makecode lesson", "src": "assets/projects/lessonbuilder-makecode.png" },
+            { "label": "student user sucessfully joining classroom via teacher's class code", "src": "assets/projects/join-success-screenshot.png" }
         ],
         "links": [
-            { "text": "view on github >", "url": "https://github.com/chrislozinski/cis4900w26-eduOS" },
+            { "text": "view github >", "url": "https://github.com/chrislozinski/cis4900w26-eduOS" },
             { "text": "read my final thesis report >", "url": "assets/projects/cis4910-ThesisReport-S26.pdf" },
             { "text": "demo video >", "url": "https://www.youtube.com/watch?v=Q41cMYCJAmk&t=25s" }
         ]
@@ -25,38 +29,24 @@
         "slug": "project-birdwatcher",
         "name": "BirdWatcher",
         "year": "2025",
-        "tools": ["flutter", "python"],
-        "subtitle": "An image recognition app that gameifies bird watching",
+        "tools": ["flutter", "python", "firebase"],
+        "subtitle": "An image recognition app to gameify bird watching",
         "icon": "assets/icons/birdwatcher/birdwatcher-64-re-export-outline.svg",
         "description": [
-            "Pokémon Go-inspired mobile app to identify and \"collect\" birds using your phone's camera.",
-            "A custom vision model connects to OpenAI's API to generate unique descriptions for each bird."
+            "A mobile app to get the younger generation outside to catch 'government bird spies.' using your phone's very camera!",
+            "Each photo of a bird taken by a user gets send to a local vision model that correctly identifies its species and type with 99% accuracy.",
+            "Once identified, the model connects and send the factual information to OpenAI's API so it can generate unique descriptions for each bird.",
+            "The API returns a spy name, and other fictious information that is presented alongside the real facts about the bird to make the learning experience fun and engaging",
+            "The entries are stored using Firebase and the application itself is built in Flutter.",
+            "I'm currently working on a web version that runs a local open weight model so that it can be hosted without the cost of tokens. It will be published here when finished!"
         ],
         "screenshots": [
-            { "label": "camera view", "src": "" },
-            { "label": "collection", "src": "" }
+            { "label": "how does it work?", "src": "assets/projects/birdwatcher-howItWorks2.png" },
+            { "label": "user interface", "src": "assets/projects/birdwatcher-interface1.png" },
+            { "label": "profile and settings", "src": "assets/projects/birdwatcher-interface2.png" }
         ],
         "links": [
-            { "text": "view on github >", "url": "#" }
-        ]
-    },
-    {
-        "slug": "project-freelance",
-        "name": "Freelance Web Design",
-        "year": "2019 - present",
-        "tools": ["css", "html5", "js"],
-        "subtitle": "sites built from scratch",
-        "icon": "assets/icons/edit-box.svg",
-        "description": [
-            "Built webpages from the ground up, implementing custom JS, HTML and CSS for smooth, seamless and unique functionalities across all devices.",
-            "Working one-on-one with clients as the sole designer and programmer, managing projects from concept to product delivery."
-        ],
-        "screenshots": [
-            { "label": "site example", "src": "" },
-            { "label": "detail", "src": "" }
-        ],
-        "links": [
-            { "text": "view work >", "url": "#" }
+            { "text": "view github >", "url": "https://github.com/MoschellaV/BirdWatcher" }
         ]
     }
 ]

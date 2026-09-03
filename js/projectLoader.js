@@ -90,28 +90,47 @@ async function showProjectDetail(slug) {
     const container = $('.project-screenshots');
 
     project.screenshots.forEach((screenshot, i) => {
-        const div = document.createElement('div');
+        const figure = document.createElement('figure');
 
-        div.className = 'project-screenshot-side';
+        // first screenshot is the full width main image, the rest sit in the row below
+        figure.className = 'project-screenshot-side';
         if (i === 0) {
-            div.className = 'project-screenshot-main';
+            figure.className = 'project-screenshot-main';
         }
 
         if (screenshot.src) {
             const img = document.createElement('img');
             img.src = screenshot.src;
             img.alt = screenshot.label;
-            div.appendChild(img);
+            img.addEventListener('click', () => openLightbox(screenshot.src));
+            figure.appendChild(img);
         } else {
             const placeholder = document.createElement('span');
             placeholder.className = 'project-screenshot-placeholder';
-            placeholder.textContent = screenshot.label;
-            div.appendChild(placeholder);
+            figure.appendChild(placeholder);
         }
 
-        container.appendChild(div);
+        // small caption under each shot, like the date text
+        const caption = document.createElement('figcaption');
+        caption.className = 'project-screenshot-label';
+        caption.textContent = screenshot.label;
+        figure.appendChild(caption);
+
+        container.appendChild(figure);
     });
 
     document.getElementById('main').replaceChildren(detail);
     document.title = project.name;
+}
+
+// fullscreen image viewer, built when a screenshot is clicked and removed on close
+function openLightbox(src) {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.innerHTML = `<span class="lightbox-close">&times;</span><img src="${src}" alt="">`;
+    // clicking the x or the backdrop closes it, clicking the image does not
+    overlay.addEventListener('click', e => {
+        if (e.target.tagName !== 'IMG') overlay.remove();
+    });
+    document.body.appendChild(overlay);
 }

@@ -32,7 +32,7 @@
 
 /*aaaand back to our regular styling for css elements *non font stuff** */
 body {
-    margin: 0; 
+    margin: 0;
     font-family: "Inconsolata", monospace;
     background-color: #ccbfa9e9;
     color: #144b8a;
@@ -60,8 +60,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; 
-    z-index: 9999; 
+    pointer-events: none;
+    z-index: 1; /* sits just above page content so the grain shows over text and the coloured bars */
     opacity: 0.05; /* how strong the noise is */
     
     /*  generate the grain using svg */
@@ -606,33 +606,72 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 22px 0;
 }
 
-/* screenshots, images will fill this or it show a placeholder */
+/* screenshots: main image full width on top, the rest share a row below, each with a caption underneath */
 .project-screenshots {
     display: flex;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 16px;
     max-width: 720px;
     margin: 0 0 22px 0;
 }
 
-.project-screenshot-main,
-.project-screenshot-side {
-    min-height: 180px;
+.project-screenshot-main { flex-basis: 100%; margin: 0; }
+.project-screenshot-side { flex: 1; margin: 0; }
+
+/* the screenshot itself, shown at its natural aspect ratio with a border */
+.project-screenshot-main img,
+.project-screenshot-side img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(18, 71, 131, 0.35);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* empty framed box when a screenshot has no image yet */
+.project-screenshot-placeholder {
+    display: block;
+    width: 100%;
+    height: 160px;
     background: #dccfb6;
     border: 1px solid rgba(18, 71, 131, 0.25);
+}
+
+/* caption under each screenshot*/
+.project-screenshot-label {
+    font-family: "Inconsolata", monospace;
+    font-size: 11px;
+    color: #124783;
+    opacity: 0.55;
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* fullscreen image viewer shown when a screenshot is clicked */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(18, 71, 131, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.project-screenshot-main { flex: 2; }
-.project-screenshot-side { flex: 1; }
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+}
 
-/* placeholder text inside screenshot areas before images are added */
-.project-screenshot-placeholder {
-    font-family: "Inconsolata", monospace;
-    font-size: 11px;
-    color: #124783;
-    opacity: 0.45;
+.lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    color: #f0e7d5;
+    font-size: 36px;
+    cursor: pointer;
 }
 
 .project-detail-description {
