@@ -873,6 +873,12 @@ h1, h2, h3, h4, h5, h6 {
     .project-detail-back {
         margin-top: 16px;
     }
+
+    /* stack name and email so the inputs don't overflow on narrow screens */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
 }
 
 /* hide mobile topbar and drawer on desktop */

@@ -21,6 +21,9 @@ async function loadNavBar() {
 
     const initialPage = window.location.hash ? window.location.hash.substring(1) : 'about';
     setActiveNav(initialPage);
+
+    // load mobile nav only after the sidebar exists, since it reads name/links from it
+    await loadMobileNav();
 }
 
 // finally we just wait for stucture of the page to be ready 
@@ -49,7 +52,8 @@ async function loadMobileNav() {
     initMobileNav();
 }
 
-document.addEventListener('DOMContentLoaded', loadMobileNav);
+// now chained at the end of loadNavBar so the sidebar is ready first
+// document.addEventListener('DOMContentLoaded', loadMobileNav);
  
 // handles the mobile top bar toggle and nav drawer
 function initMobileNav() {
